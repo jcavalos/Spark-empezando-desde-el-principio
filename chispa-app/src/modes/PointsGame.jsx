@@ -83,7 +83,7 @@ export default function PointsGame({ roomId, room, uid, otherUid, other }) {
             <p className="font-display text-lg text-blush">{p.punishment}</p>
           </div>
         )}
-        <button onClick={restart} className="btn-primary">Jugar otra ronda de 20</button>
+        <button onClick={restart} className="btn-primary">Jugar otra ronda</button>
       </div>
     )
   }

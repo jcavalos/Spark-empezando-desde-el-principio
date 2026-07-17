@@ -12,9 +12,9 @@ import PointsGame from '../modes/PointsGame'
 const MODES = [
   { id: 'truth', label: 'Verdad o Reto' },
   { id: 'knowme', label: '¿Qué tanto me conoces?' },
-  { id: 'adventure', label: 'Aventura' },
+  { id: 'adventure', label: 'Que pasa si?' },
   { id: 'prefer', label: '¿Qué prefieres?' },
-  { id: 'points', label: 'Reto de los 20' },
+  { id: 'points', label: 'Preparate para perder!' },
 ]
 
 export default function GameRoom({ roomId, onLeave }) {
