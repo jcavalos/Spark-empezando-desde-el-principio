@@ -6,11 +6,15 @@ import SpiceSlider from './SpiceSlider'
 import TruthOrDare from '../modes/TruthOrDare'
 import KnowMe from '../modes/KnowMe'
 import Adventure from '../modes/Adventure'
+import WouldYouRather from '../modes/WouldYouRather'
+import PointsGame from '../modes/PointsGame'
 
 const MODES = [
   { id: 'truth', label: 'Verdad o Reto' },
   { id: 'knowme', label: '¿Qué tanto me conoces?' },
   { id: 'adventure', label: 'Aventura' },
+  { id: 'prefer', label: '¿Qué prefieres?' },
+  { id: 'points', label: 'Reto de los 20' },
 ]
 
 export default function GameRoom({ roomId, onLeave }) {
@@ -103,6 +107,12 @@ export default function GameRoom({ roomId, onLeave }) {
         )}
         {room.mode === 'adventure' && (
           <Adventure roomId={roomId} room={room} uid={uid} me={me} otherUid={otherEntry?.[0]} other={other} />
+        )}
+        {room.mode === 'prefer' && (
+          <WouldYouRather roomId={roomId} room={room} uid={uid} me={me} otherUid={otherEntry?.[0]} other={other} />
+        )}
+        {room.mode === 'points' && (
+          <PointsGame roomId={roomId} room={room} uid={uid} me={me} otherUid={otherEntry?.[0]} other={other} />
         )}
       </main>
     </div>
