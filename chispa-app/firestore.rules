@@ -1,0 +1,14 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Cualquiera que entre a la app (de forma anónima) puede leer y escribir
+    // dentro de una sala, siempre que conozca el código de esa sala.
+    // Es suficiente para un juego casual entre amigos: no hay datos sensibles
+    // guardados más allá de nombres y respuestas del juego.
+    match /rooms/{roomId} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
